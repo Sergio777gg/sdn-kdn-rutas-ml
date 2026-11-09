@@ -1,0 +1,17 @@
+{
+  "files": {
+    "laboratorio/mininet/recuperacion_ovs.py": "dd59919fa3a2d352eb46b0c1995f583a1b972e04776fc6adda8c29c7ae56c38f",
+    "laboratorio/mininet/iniciar_redes.py": "4cf545be9ea56d44732a7e49bb342ec63db4bf30cc45c4678ed210fee5b539b7",
+    "tests/test_recuperacion_ovs.py": "cab5ac61df141df381afecd94a0596dd47132014f2d575f891d337fb0105b009",
+    "documentacion/ARRANQUE_Y_RECUPERACION.md": "8f2691fb429f98d6f1f061cbd9d427bcad200ed26cf08994623e76ec20775393",
+    "README.md": "cd09923940c1a46ee9bfb00b2013e0348e9eca8724c574c6bda05fe1df056f1b",
+    "CHANGELOG.md": "73abd39e912902d1909dde598fe515c186a9919ca774a7765679b80d14f22723",
+    ".gitignore": "1544c0b7b0296baa2ec000fe3dddb5416cf97661c543d0fa74a2a3c9ee5110a4",
+    "evidencias/RECUPERACION_TRAS_APAGADO.md": "60d83710ec36d025ad77ff742d9718bc3d85898147f4f10cbe7522cf776d95cb",
+    "evidencias/recuperacion_idempotencia.json": "ac5938a6d0e3211b72352a382b6c3c30b76d2f86eaeefb879201131050812ab3",
+    "evidencias/rutas_tras_recuperacion.json": "f6cb12f000604c30c5187baf2c3e2192933fee5922e623f57702dde6b563df1c"
+  },
+  "date": "2026-11-09",
+  "tests": 30,
+  "data_and_model_unchanged": true
+}

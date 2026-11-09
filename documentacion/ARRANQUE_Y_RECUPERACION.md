@@ -40,11 +40,11 @@ ryu-manager --ofp-tcp-listen-port 16653 --wsapi-host 0.0.0.0 --wsapi-port 18080 
 ryu-manager --ofp-tcp-listen-port 16654 --wsapi-host 0.0.0.0 --wsapi-port 18081 ryu.app.ofctl_rest
 ```
 
-Para ML, copiar una vez `laboratorio/ryu/servidor.py` de este paquete a una ubicación estable de RYU, por ejemplo `~/proyecto_nsfnet/laboratorio/ryu/servidor.py`. Es una copia exacta del servidor inspeccionado, no un modelo nuevo. Usar el entorno ML existente:
+Para ML se usa el servidor original que ya está en RYU, con su entorno y modelo existentes. No hace falta clonar GitHub:
 
 ```bash
 cd ~/proyecto_nsfnet
-./entorno_ml/bin/python -u laboratorio/ryu/servidor.py \
+./entorno_ml/bin/python -u inferencia_comun_v1_hCmIwX/servidor.py \
   resultados_comun_20261107T205101/modelo_20261107T205202Z_n4vncu_0/modelo_comun.pkl
 ```
 
@@ -52,32 +52,23 @@ El modelo debe conservar `evaluacion_test.json` en su carpeta actual. El servido
 
 ## 3. Iniciar Mininet después del apagado
 
-Se incluyen copias de los dos workers, sus tres dependencias locales, perfiles originales embebidos y el observador base bajo `laboratorio/mininet/`. El wrapper `iniciar.py` evita depender de la última carpeta temporal o de PID anteriores. Copiar esa carpeta completa una vez a `~/proyecto_nsfnet/laboratorio/mininet/` en Mininet.
-
-Primero consultar, sin crear redes:
+Los archivos están instalados en `~/proyecto_nsfnet/laboratorio/mininet/` de la VM Mininet. **No hace falta clonar el repositorio.** Una vez que RYU y el modelo responden, ejecutar un único comando:
 
 ```bash
-python3 ~/proyecto_nsfnet/laboratorio/mininet/iniciar.py geant2
-python3 ~/proyecto_nsfnet/laboratorio/mininet/iniciar.py nsfnet
+sudo python3 ~/proyecto_nsfnet/laboratorio/mininet/iniciar_redes.py --recuperar-huerfanos
 ```
 
-**Arranque explícito, únicamente con las redes anteriores apagadas y autorización del operador:** estos comandos crean interfaces, instalan el forwarding convencional del experimento existente e inician sus sondas y tráfico de baja carga. No aplicar en la sesión activa de esta entrega.
+El comando inicia primero GEANT2 y después NSFNET, espera una ventana completa con las 60 entradas de todos los enlaces y deja los recolectores funcionando en segundo plano. Al terminar imprime `Ambas redes listas`. Se puede cerrar esa terminal. La carga y el forwarding convencionales son los mismos del experimento; no aplica las decisiones ML al tráfico.
 
-En dos terminales de Mininet, primero GEANT2 y después NSFNET:
+Si una red ya tiene observador y mediciones recientes, la verifica y la conserva. Se probó repetir la orden: mantuvo los mismos procesos y no duplicó redes.
 
-```bash
-sudo python3 ~/proyecto_nsfnet/laboratorio/mininet/iniciar.py geant2 --arrancar-red
-```
+Después de apagar una VM, OVS puede conservar los bridges aunque sus interfaces `*-eth*` hayan desaparecido. RYU puede mostrar 24 y 14 switches que solo tienen el puerto local. Eso no demuestra que las redes y sus recolectores estén activos.
 
-```bash
-sudo python3 ~/proyecto_nsfnet/laboratorio/mininet/iniciar.py nsfnet --arrancar-red
-```
+La opción `--recuperar-huerfanos` autoriza, en esta ejecución, retirar exclusivamente esos restos tras comprobar DPID, controlador, nombres de puertos, ausencia de interfaces Linux y ausencia de procesos propietarios. Se guarda un respaldo completo de OVS antes de retirar nada. Una identidad o estado dudoso cancela la operación; no se ejecuta `mn -c`, no se reinicia RYU ni se detiene un recolector existente. Sin esa opción, el comando se limita a conservar los restos y explicar la situación.
 
-El wrapper comprueba que el observador no esté respondiendo, que Mininet conserve su IP, que el REST dedicado no tenga switches y que el puerto local esté libre. Los workers originales también rechazan bridges existentes. No se ejecuta `mn -c`. Los errores no autorizan limpiar redes ajenas.
+Los respaldos quedan bajo `~/proyecto_nsfnet/backups/recuperacion_ovs_<fecha>/`. Los logs del arranque se guardan bajo `laboratorio/mininet/arranques/<fecha>/` y las ventanas nuevas bajo `laboratorio/mininet/sesiones/`. No se reutilizan PID históricos ni se sobrescriben las sesiones anteriores.
 
-Las sesiones nuevas quedan en una carpeta persistente `laboratorio/mininet/sesiones/vivo_<topologia>_<fecha>_<id>/`. `ultima_nsfnet.txt` y `ultima_geant2.txt` apuntan a sus estados. El código fuente está en carpetas estables y no depende de sesiones anteriores. Esperar el estado `telemetria_nsfnet` o `telemetria_geant2` y una ventana reciente con 60 entradas por enlace. Una primera predicción guardada no demuestra actualización continua: comprobar que `window_end` avanza en `/snapshot`.
-
-**Límite de validación:** las fuentes se copiaron sin cambios y el wrapper pasó comprobación de sintaxis; el arranque completo después de apagar VMs no se ejecutó para preservar las dos redes activas. Los workers conservan sus direcciones fijas del laboratorio. Si la IP cambia, el wrapper se detiene y se requiere adaptar esas copias conscientemente antes del próximo arranque.
+**Validación real:** se recuperaron los 24 bridges GEANT2 y los 14 NSFNET que quedaron después del apagado, se iniciaron los dos recolectores, se verificaron entradas recientes y se calcularon ambas alternativas de ruta con el modelo original. La evidencia está en `evidencias/RECUPERACION_TRAS_APAGADO.md`.
 
 ## 4. Iniciar la interfaz
 

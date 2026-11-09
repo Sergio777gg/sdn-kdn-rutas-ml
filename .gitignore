@@ -27,4 +27,6 @@ validacion_rutas_ml/
 interfaz_rutas_ml_ejecucion/
 ultima_*.txt
 sesiones/
+arranques/
+arranque.lock
 work/

@@ -1,5 +1,12 @@
 # Cambios
 
+## 0.1.1 — 2026-11-09
+
+- Arranque consolidado de ambas redes Mininet sin clonar el repositorio.
+- Recuperación opt-in y respaldada de bridges OVS huérfanos tras apagar las VMs, con comprobaciones de identidad, puertos y procesos.
+- Conservación de redes existentes al repetir el comando, comprobada con los mismos PID de recolectores.
+- 30 pruebas automáticas aprobadas y comparaciones reales verificadas tras la recuperación.
+
 ## 0.1.0 — 2026-11-09
 
 - Selección automática de fuentes NSFNET/GEANT2 con Auto estable y validación del controlador.

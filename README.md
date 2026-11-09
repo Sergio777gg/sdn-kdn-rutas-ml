@@ -9,7 +9,7 @@ Ampliación del proyecto existente FastAPI/React/RYU/Mininet. Compara Dijkstra c
 - Código activado en `/home/vboxuser/proyecto_nsfnet` de la VM de interfaz, con autorización del usuario.
 - Versión de validación: backend `127.0.0.1:8003`; panel `http://127.0.0.1:5182/sdn-selector.html` dentro de esa VM.
 - Versión habitual activada: FastAPI `127.0.0.1:8002` y panel `http://127.0.0.1:5181/sdn-selector.html`. Se reiniciaron únicamente FastAPI y Vite; RYU, ML y recolectores conservaron sus procesos originales.
-- 23 pruebas automáticas aprobadas, incluidas las originales; comparación real aprobada para ambas topologías. Evidencias en `evidencias/`.
+- 30 pruebas automáticas aprobadas, incluidas las originales y las de recuperación OVS; comparación real aprobada para ambas topologías. Evidencias en `evidencias/`.
 - Frontend compilado y archivos modificados aprobados por ESLint. Revisión visual e interacción completa pendientes: Computer Use se detuvo al no poder verificar la URL del navegador.
 - Repositorio público: [Sergio777gg/sdn-kdn-rutas-ml](https://github.com/Sergio777gg/sdn-kdn-rutas-ml).
 
@@ -40,6 +40,12 @@ La comparación no aplica las rutas al tráfico. Si las entradas faltan o caduca
 
 ## Arranque, arquitectura y reversión
 
+En Mininet, los archivos ya instalados se inician con un solo comando, sin clonar GitHub:
+
+```bash
+sudo python3 ~/proyecto_nsfnet/laboratorio/mininet/iniciar_redes.py --recuperar-huerfanos
+```
+
 Consultar [guía de arranque](documentacion/ARRANQUE_Y_RECUPERACION.md), [costo y arquitectura](documentacion/ARQUITECTURA_Y_COSTO.md), [respaldo y reversión](documentacion/RESPALDO_Y_ROLLBACK.md) y [evidencias](evidencias/RESULTADOS.md).
 
 Las dependencias de Python y npm del proyecto se conservan; no se reinstalaron ni actualizaron bibliotecas en las VMs. Para comprobar sobre su entorno existente:
@@ -67,4 +73,4 @@ Los modelos y los CSV originales permanecen en las VMs; no forman parte de este 
 
 ## Límites pendientes
 
-Revisión visual manual pendiente. La activación en los puertos habituales está completada y verificada por HTTP. El arranque de recuperación Mininet tras un apagado real se preparó y comprobó estáticamente, pero no se ensayó: hacerlo habría interrumpido o duplicado las redes activas. Multiusuario, autenticación, aplicación de rutas ML y evaluación experimental de mejoras quedan fuera de esta ampliación.
+Revisión visual manual pendiente. La activación en los puertos habituales está completada y verificada por HTTP. Se verificó la recuperación de Mininet con restos OVS reales tras el apagado de las VMs, conservando los controladores y sin duplicar recolectores. Multiusuario, autenticación, aplicación de rutas ML y evaluación experimental de mejoras quedan fuera de esta ampliación.

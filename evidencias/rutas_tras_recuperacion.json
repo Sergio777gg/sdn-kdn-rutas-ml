@@ -1,0 +1,450 @@
+[
+  {
+    "topologia": "nsfnet",
+    "session_id": "vivo_nsfnet_20261109T215744Z_c6b9d843",
+    "topology_instance_id": "b4878b3101129e086d549e3c",
+    "graph_version": "54f04f25d317784fb3b5f5ac",
+    "selection_revision": 1,
+    "observed_utc": "2026-11-09T21:58:25.079883+00:00",
+    "convencional": {
+      "ruta": [
+        "s1",
+        "s3",
+        "s6",
+        "s14"
+      ],
+      "saltos": 3,
+      "edge_ids": [
+        "s1-s3",
+        "s3-s6",
+        "s6-s14"
+      ],
+      "costo_referencia": 0.6666666666666666,
+      "capacidad_minima_mbps": 3.0,
+      "costo_qos": 0.43117320856441516,
+      "delay_previsto_ms": 50.089564171084014,
+      "loss_previsto_ratio": 0.0,
+      "predicciones_enlaces": [
+        {
+          "link_id": "s1-s3",
+          "origen": "s1",
+          "destino": "s3",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.05885025572024208,
+          "delay_ms": 29.806195875228482,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.20816968562619856,
+          "componentes": {
+            "delay": 0.37348222839525425,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.009713106156515546
+          }
+        },
+        {
+          "link_id": "s3-s6",
+          "origen": "s3",
+          "destino": "s6",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.15836998016121312,
+          "delay_ms": 5.702204827840187,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07261330321310396,
+          "componentes": {
+            "delay": 0.10236946356906507,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.02571621722491368
+          }
+        },
+        {
+          "link_id": "s6-s14",
+          "origen": "s6",
+          "destino": "s14",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.007003333916025895,
+          "delay_ms": 14.581163468015342,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.15039021972511266,
+          "componentes": {
+            "delay": 0.22578043945022533,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.002329007699138611
+          }
+        }
+      ]
+    },
+    "inteligente": {
+      "ruta": [
+        "s1",
+        "s3",
+        "s6",
+        "s14"
+      ],
+      "saltos": 3,
+      "edge_ids": [
+        "s1-s3",
+        "s3-s6",
+        "s6-s14"
+      ],
+      "costo_referencia": 0.6666666666666666,
+      "capacidad_minima_mbps": 3.0,
+      "costo_qos": 0.43117320856441516,
+      "delay_previsto_ms": 50.089564171084014,
+      "loss_previsto_ratio": 0.0,
+      "predicciones_enlaces": [
+        {
+          "link_id": "s1-s3",
+          "origen": "s1",
+          "destino": "s3",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.05885025572024208,
+          "delay_ms": 29.806195875228482,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.20816968562619856,
+          "componentes": {
+            "delay": 0.37348222839525425,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.009713106156515546
+          }
+        },
+        {
+          "link_id": "s3-s6",
+          "origen": "s3",
+          "destino": "s6",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.15836998016121312,
+          "delay_ms": 5.702204827840187,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07261330321310396,
+          "componentes": {
+            "delay": 0.10236946356906507,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.02571621722491368
+          }
+        },
+        {
+          "link_id": "s6-s14",
+          "origen": "s6",
+          "destino": "s14",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.007003333916025895,
+          "delay_ms": 14.581163468015342,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.15039021972511266,
+          "componentes": {
+            "delay": 0.22578043945022533,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.002329007699138611
+          }
+        }
+      ]
+    },
+    "ml": {
+      "modelo_id": "modelo_20261107T205202Z_n4vncu_0",
+      "feature_start_epoch_s": 1794261472.642678,
+      "feature_end_epoch_s": 1794261495.187228,
+      "input_age_s": 12.910323143005371,
+      "max_age_s": 120,
+      "objetivo": "siguiente_ventana",
+      "links_predicted": 21,
+      "status": "available"
+    },
+    "pesos": {
+      "delay": 0.5,
+      "loss": 0.35,
+      "capacity": 0.15,
+      "load": 0.0
+    },
+    "escalas": {
+      "delay_ms": 50.0,
+      "loss_ratio": 0.01,
+      "capacity_mbps": 1.0
+    },
+    "criterio": "QoS normalizado direccional",
+    "rules_installed": false,
+    "formula": "w_delay*d/(d+D) + w_loss*l/(l+L) + w_capacity*C/(C+c) + w_load*t/(t+c)",
+    "advertencias": [
+      "Delay: suma de predicciones por enlace, no medicion extremo a extremo.",
+      "Loss: 1-producto(1-loss); aproximacion de perdidas sucesivas. Incluye rechazos locales de sondas.",
+      "Throughput RX por enlace no se suma ni demuestra capacidad disponible."
+    ],
+    "rutas_iguales": true,
+    "recomendacion": "Ambas rutas coinciden bajo este criterio.",
+    "comparison_id": "e77f270e3a95d555a6fae4de",
+    "validation_elapsed_s": 3.9122530300001017
+  },
+  {
+    "topologia": "geant2",
+    "session_id": "vivo_geant2_20261109T215703Z_29c35a3b",
+    "topology_instance_id": "50abf3e336f0305a5645d9a2",
+    "graph_version": "e435844841c6924d2c6b56c4",
+    "selection_revision": 2,
+    "observed_utc": "2026-11-09T21:58:30.330037+00:00",
+    "convencional": {
+      "ruta": [
+        "s1",
+        "s2",
+        "s10",
+        "s13",
+        "s22",
+        "s23",
+        "s24"
+      ],
+      "saltos": 6,
+      "edge_ids": [
+        "s1-s2",
+        "s2-s10",
+        "s10-s13",
+        "s13-s22",
+        "s22-s23",
+        "s23-s24"
+      ],
+      "costo_referencia": 1.3333333333333333,
+      "capacidad_minima_mbps": 3.0,
+      "costo_qos": 0.8164186787584242,
+      "delay_previsto_ms": 92.46695454919457,
+      "loss_previsto_ratio": 0.0,
+      "predicciones_enlaces": [
+        {
+          "link_id": "s1-s2",
+          "origen": "s1",
+          "destino": "s2",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.04007845443740086,
+          "delay_ms": 27.894126533408723,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.20048011083729023,
+          "componentes": {
+            "delay": 0.3581030788174376,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.006635419513128483
+          }
+        },
+        {
+          "link_id": "s2-s10",
+          "origen": "s2",
+          "destino": "s10",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.13297693872753316,
+          "delay_ms": 6.186191544114769,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07647938884567346,
+          "componentes": {
+            "delay": 0.11010163483420407,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.02168228252870671
+          }
+        },
+        {
+          "link_id": "s10-s13",
+          "origen": "s10",
+          "destino": "s13",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.1943345619091616,
+          "delay_ms": 6.020584247819348,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.09123546463908669,
+          "componentes": {
+            "delay": 0.1074709292781734,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.060837259887083786
+          }
+        },
+        {
+          "link_id": "s13-s22",
+          "origen": "s13",
+          "destino": "s22",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.13248738217757555,
+          "delay_ms": 7.0061674354490675,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.0828795314793633,
+          "componentes": {
+            "delay": 0.12290192010158377,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.021604183412201463
+          }
+        },
+        {
+          "link_id": "s22-s23",
+          "origen": "s22",
+          "destino": "s23",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.07091512134044596,
+          "delay_ms": 29.231982022705544,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.20589942067684924,
+          "componentes": {
+            "delay": 0.3689416984965556,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.011681125484882095
+          }
+        },
+        {
+          "link_id": "s23-s24",
+          "origen": "s23",
+          "destino": "s24",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.0068196666821880424,
+          "delay_ms": 16.12790276569712,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.15944476228016133,
+          "componentes": {
+            "delay": 0.24388952456032267,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.0022680664084231764
+          }
+        }
+      ]
+    },
+    "inteligente": {
+      "ruta": [
+        "s1",
+        "s2",
+        "s10",
+        "s13",
+        "s20",
+        "s24"
+      ],
+      "saltos": 5,
+      "edge_ids": [
+        "s1-s2",
+        "s2-s10",
+        "s10-s13",
+        "s13-s20",
+        "s20-s24"
+      ],
+      "costo_referencia": 1.6666666666666665,
+      "capacidad_minima_mbps": 1.5,
+      "costo_qos": 0.696427507096237,
+      "delay_previsto_ms": 73.62499212223877,
+      "loss_previsto_ratio": 0.0,
+      "predicciones_enlaces": [
+        {
+          "link_id": "s1-s2",
+          "origen": "s1",
+          "destino": "s2",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.04007845443740086,
+          "delay_ms": 27.894126533408723,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.20048011083729023,
+          "componentes": {
+            "delay": 0.3581030788174376,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.006635419513128483
+          }
+        },
+        {
+          "link_id": "s2-s10",
+          "origen": "s2",
+          "destino": "s10",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.13297693872753316,
+          "delay_ms": 6.186191544114769,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07647938884567346,
+          "componentes": {
+            "delay": 0.11010163483420407,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.02168228252870671
+          }
+        },
+        {
+          "link_id": "s10-s13",
+          "origen": "s10",
+          "destino": "s13",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.1943345619091616,
+          "delay_ms": 6.020584247819348,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.09123546463908669,
+          "componentes": {
+            "delay": 0.1074709292781734,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.060837259887083786
+          }
+        },
+        {
+          "link_id": "s13-s20",
+          "origen": "s13",
+          "destino": "s20",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.038943925822006856,
+          "delay_ms": 5.906415845130716,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.09032413257802456,
+          "componentes": {
+            "delay": 0.10564826515604912,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.012814953738072964
+          }
+        },
+        {
+          "link_id": "s20-s24",
+          "origen": "s20",
+          "destino": "s24",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.039579591037864986,
+          "delay_ms": 27.617673951765212,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.23790841019616205,
+          "componentes": {
+            "delay": 0.3558168203923241,
+            "loss": 0.0,
+            "capacity": 0.4,
+            "load": 0.0257080512552024
+          }
+        }
+      ]
+    },
+    "ml": {
+      "modelo_id": "modelo_20261107T205202Z_n4vncu_0",
+      "feature_start_epoch_s": 1794261485.83575,
+      "feature_end_epoch_s": 1794261508.896735,
+      "input_age_s": 7.392228364944458,
+      "max_age_s": 120,
+      "objetivo": "siguiente_ventana",
+      "links_predicted": 37,
+      "status": "available"
+    },
+    "pesos": {
+      "delay": 0.5,
+      "loss": 0.35,
+      "capacity": 0.15,
+      "load": 0.0
+    },
+    "escalas": {
+      "delay_ms": 50.0,
+      "loss_ratio": 0.01,
+      "capacity_mbps": 1.0
+    },
+    "criterio": "QoS normalizado direccional",
+    "rules_installed": false,
+    "formula": "w_delay*d/(d+D) + w_loss*l/(l+L) + w_capacity*C/(C+c) + w_load*t/(t+c)",
+    "advertencias": [
+      "Delay: suma de predicciones por enlace, no medicion extremo a extremo.",
+      "Loss: 1-producto(1-loss); aproximacion de perdidas sucesivas. Incluye rechazos locales de sondas.",
+      "Throughput RX por enlace no se suma ni demuestra capacidad disponible."
+    ],
+    "rutas_iguales": false,
+    "recomendacion": "La ruta inteligente minimiza el costo QoS previsto de esta ventana; no garantiza mejoras medidas.",
+    "comparison_id": "903cdaa49b3fe6a0a07a581a",
+    "validation_elapsed_s": 7.955747960000281
+  }
+]
