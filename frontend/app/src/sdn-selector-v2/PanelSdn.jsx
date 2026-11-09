@@ -1,3 +1,4 @@
+import { COMPARISON_ROUTES, comparisonEdgeGroups } from "./comparisonGraph.js";
 import ComparacionRutas from "./ComparacionRutas.jsx";
 import PrediccionesEnlaceV1 from "./PrediccionesEnlaceV1.jsx";
 import ModeloComunV1 from "./ModeloComunV1.jsx";
@@ -61,7 +62,7 @@ export default function PanelSdn({ live }) {
   const [engine, setEngine] = useState("local");
   const [storedRouteResult, setRouteResult] = useState(null);
   const [comparisonStored, setComparison] = useState(null);
-  const [visibility, setVisibility] = useState({ convencional: true, inteligente: true });
+  const [visibility, setVisibility] = useState({ hops: true, delay: true, capacity: true, ml: true });
   const [clock, setClock] = useState(Date.now);
   useEffect(() => { const timer = setInterval(() => setClock(Date.now()), 1000); return () => clearInterval(timer); }, []);
   const intelligentExpired = storedRouteResult?.policy === "ml"
@@ -175,8 +176,7 @@ export default function PanelSdn({ live }) {
         { selector: "edge.route-edge", style: { "line-color": "#34d399", width: 5, "z-index": 999 } },
         { selector: "edge.route-ml", style: { "line-color": "#c084fc", "line-style": "dashed" } },
         { selector: "node.route-node", style: { "background-color": "#14532d", "border-color": "#4ade80", "border-width": 4 } },
-        { selector: "edge.comparison-conventional", style: { "line-color": "#38bdf8", width: 5, "line-style": "solid", "z-index": 1000 } },
-        { selector: "edge.comparison-ml", style: { "line-color": "#c084fc", width: 5, "line-style": "dashed", "z-index": 1001 } },
+        ...COMPARISON_ROUTES.map(route => ({ selector: `edge.comparison-${route.id}`, style: { "line-color": route.color, width: 5, "line-style": route.line, "z-index": 1000 } })),
         { selector: "edge.comparison-shared", style: { "line-color": "#fbbf24", width: 7, "line-style": "dotted", "z-index": 1002 } },
         { selector: "node:selected", style: { "border-color": "#f6c777", "border-width": 5 } },
         { selector: "edge:selected", style: { "line-color": "#f6c777", width: 5 } },
@@ -206,12 +206,11 @@ export default function PanelSdn({ live }) {
   useEffect(() => {
     const cy = cyRef.current;
     if (!cy) return;
-    cy.edges().removeClass("comparison-conventional comparison-ml comparison-shared");
+    cy.edges().removeClass(COMPARISON_ROUTES.map(r => `comparison-${r.id}`).join(" ") + " comparison-shared");
     if (!comparison) return;
-    const ref = new Set(visibility.convencional ? comparison.convencional.edge_ids : []);
-    const ml = new Set(visibility.inteligente ? comparison.inteligente?.edge_ids || [] : []);
-    ref.forEach(id => cy.getElementById(edgeKey(id)).addClass(ml.has(id) ? "comparison-shared" : "comparison-conventional"));
-    ml.forEach(id => { if (!ref.has(id)) cy.getElementById(edgeKey(id)).addClass("comparison-ml"); });
+    comparisonEdgeGroups(comparison, visibility).forEach((ids, edge) => {
+      cy.getElementById(edgeKey(edge)).addClass(ids.length > 1 ? "comparison-shared" : `comparison-${ids[0]}`);
+    });
   }, [topology, comparison, visibility]);
 
   useEffect(() => {

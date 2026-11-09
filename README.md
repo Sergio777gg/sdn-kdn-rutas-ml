@@ -2,14 +2,14 @@
 
 [![Validación](https://github.com/Sergio777gg/sdn-kdn-rutas-ml/actions/workflows/validacion.yml/badge.svg)](https://github.com/Sergio777gg/sdn-kdn-rutas-ml/actions/workflows/validacion.yml)
 
-Ampliación del proyecto existente FastAPI/React/RYU/Mininet. Compara Dijkstra con costo inverso de capacidad y Dijkstra dirigido con costos QoS basados en las predicciones del modelo común existente. No reentrena el modelo ni instala forwarding al comparar.
+Ampliación del proyecto existente FastAPI/React/RYU/Mininet. Compara las cuatro opciones del selector: menos saltos, menor retardo configurado, inversa de capacidad y ruta inteligente con QoS direccional previsto por el modelo existente. No reentrena el modelo ni instala forwarding al comparar.
 
 ## Estado de esta entrega
 
 - Código activado en `/home/vboxuser/proyecto_nsfnet` de la VM de interfaz, con autorización del usuario.
 - Versión de validación: backend `127.0.0.1:8003`; panel `http://127.0.0.1:5182/sdn-selector.html` dentro de esa VM.
 - Versión habitual activada: FastAPI `127.0.0.1:8002` y panel `http://127.0.0.1:5181/sdn-selector.html`. Se reiniciaron únicamente FastAPI y Vite; RYU, ML y recolectores conservaron sus procesos originales.
-- 30 pruebas automáticas aprobadas, incluidas las originales y las de recuperación OVS; comparación real aprobada para ambas topologías. Evidencias en `evidencias/`.
+- 39 pruebas Python y 3 pruebas de lógica del mapa. Comparación real de los cuatro criterios verificada en ambas topologías. Evidencias en `evidencias/`.
 - Frontend compilado y archivos modificados aprobados por ESLint. Revisión visual e interacción completa pendientes: Computer Use se detuvo al no poder verificar la URL del navegador.
 - Repositorio público: [Sergio777gg/sdn-kdn-rutas-ml](https://github.com/Sergio777gg/sdn-kdn-rutas-ml).
 
@@ -19,11 +19,11 @@ Ampliación del proyecto existente FastAPI/React/RYU/Mininet. Compara Dijkstra c
 2. Pulsar NSFNET o GEANT2. No escribir IP ni puertos del observador.
 3. Esperar «Red activa verificada». Revisar telemetría y disponibilidad del modelo por separado.
 4. Ir a **Enrutamiento**, elegir origen y destino. Para la tarjeta individual, seleccionar **Ruta inteligente (ML)** en **Criterio de la ruta** y pulsar **Calcular ruta inteligente**. Para evaluar las dos alternativas juntas, pulsar **Comparar rutas**.
-5. Revisar trayectos, costos bajo ambas fórmulas, delay previsto, loss compuesto y capacidad mínima nominal. Se indica si los caminos coinciden.
-6. Usar las casillas para ocultar o mostrar trazados sin recalcular. Azul continuo = convencional; violeta discontinuo = ML; dorado punteado = tramos compartidos.
+5. Revisar las cuatro tarjetas y la tabla común: saltos, retardo configurado, costo de referencia, costo QoS, delay previsto, loss compuesto y capacidad mínima nominal. Las diferencias se calculan frente a la referencia por inversa de capacidad; los mejores valores y empates se señalan por indicador.
+6. Usar las casillas o «Ver solo esta ruta» para ocultar o mostrar trazados sin recalcular. Verde = saltos; naranja = retardo configurado; azul = capacidad; violeta = ML; dorado punteado = tramos compartidos entre alternativas visibles.
 7. Abrir las predicciones por enlace de cada ruta. Esas tablas conservan la ventana de la comparación; al seleccionar el enlace, el inspector existente puede mostrar una ventana más nueva.
 
-La comparación no aplica las rutas al tráfico. Si las entradas faltan o caducan, solo se ofrece el cálculo convencional. El panel retira resultados ML a los 120 segundos desde el final de la ventana de entrada. Las predicciones son para la próxima ventana.
+La comparación no aplica las rutas al tráfico. Si las entradas ML faltan, siguen disponibles las tres alternativas convencionales con sus métricas nominales; los valores previstos quedan ausentes. El panel retira la comparación prevista al caducar las entradas (120 segundos desde el final de la ventana). Las predicciones son para la próxima ventana. Una ruta que mejora QoS puede tener más saltos o menor capacidad nominal: la tabla presenta esos intercambios.
 
 ## Archivos principales
 

@@ -29,3 +29,18 @@ jobs:
         run: python -m pytest tests -q
       - name: Comprobar sintaxis de servicios y recuperacion
         run: python -m compileall -q backend scripts laboratorio
+
+  mapa-comparado:
+    name: Logica del mapa comparado
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Comprobar rutas visibles y tramos compartidos
+        run: node --test frontend/app/tests/comparisonGraph.test.mjs

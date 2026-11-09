@@ -1,5 +1,13 @@
 # Cambios
 
+## 0.2.0 — 2026-11-09
+
+- Comparación conjunta de las cuatro opciones del selector sobre el mismo snapshot y ventana de predicción.
+- Tabla de métricas comunes, diferencias respecto a capacidad nominal y mejores valores con empates explícitos.
+- Tarjetas de ventajas y desventajas, coincidencias de trayectos y visualización selectiva de las cuatro alternativas.
+- Respuesta compatible con la tarjeta individual ML y las rutas convencionales existentes.
+- 39 pruebas Python y 3 de agrupación/visibilidad de rutas en el mapa; validación real en NSFNET y GEANT2.
+
 ## 0.1.1 — 2026-11-09
 
 - Arranque consolidado de ambas redes Mininet sin clonar el repositorio.

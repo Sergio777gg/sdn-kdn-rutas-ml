@@ -33,6 +33,14 @@ cd frontend/app
 npx eslint src/sdn-selector-v2/ComparacionRutas.jsx src/sdn-selector-v2/SelectorRoot.jsx src/sdn-selector-v2/PanelSdn.jsx
 ```
 
+La lógica pura de visibilidad y agrupación de las cuatro rutas se prueba sin instalar dependencias adicionales:
+
+```bash
+node --test frontend/app/tests/comparisonGraph.test.mjs
+```
+
+Ejecutar esa última orden desde la raíz del repositorio. GitHub Actions la ejecuta además de las pruebas Python. La compilación Vite y la validación con las VMs se registran por separado.
+
 ## Cambios en las VMs
 
 Inspeccionar antes de editar, respaldar con fecha y registrar SHA-256. No detener recolectores, reiniciar controladores, limpiar Mininet, generar campañas, modificar modelos/datasets ni instalar forwarding sin autorización explícita del operador. Las pruebas reales son opt-in y están separadas de CI.

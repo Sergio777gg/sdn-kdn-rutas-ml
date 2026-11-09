@@ -1,5 +1,15 @@
 # Comparación SDN/KDN
 
+## Cuatro criterios en la comparación
+
+La comparación conjunta calcula una ruta óptima para cada criterio del selector: saltos, retardo configurado, inversa de capacidad nominal y QoS direccional ML. Las tres primeras reutilizan Dijkstra y sus pesos existentes. Todas se evalúan sobre el mismo snapshot; se realiza una única obtención validada de predicciones para evaluar los cuatro caminos bajo el mismo QoS.
+
+`alternativas` contiene los cuatro resultados, su estado, costo de selección con sus unidades, métricas comunes, coincidencias, diferencias frente a la referencia por capacidad, ventajas y desventajas. `mejores_por_metrica` identifica mejores valores y empates con tolerancia numérica. Los campos `convencional` e `inteligente` se conservan para compatibilidad con la tarjeta individual y los clientes existentes.
+
+Los costos de selección de saltos, ms configurados, Σ 1/Mbps y QoS tienen distintas escalas y se etiquetan por columna. Las comparaciones numéricas entre caminos usan métricas comunes. La capacidad mínima se favorece al aumentar; los costos, saltos y retardos/pérdidas se favorecen al disminuir. Las ventajas y desventajas textuales son relativas a la ruta por inversa de capacidad. No se deduce un throughput extremo a extremo.
+
+Cuando varias opciones eligen el mismo camino, se conservan sus columnas y se declara la coincidencia. Si falta ML, se muestran las tres alternativas convencionales sin métricas previstas. Si falta retardo configurado, únicamente esa alternativa se declara no disponible; no se omiten enlaces silenciosamente para favorecerla.
+
 ## Flujo de datos
 
 Mininet conserva sus redes y recolectores. Los observadores publican topologías, interfaces y ventanas medidas. FastAPI selecciona la fuente permitida y verifica DPID y nombres de puertos contra RYU. El servicio ML existente en RYU recibe las 60 características por enlace y devuelve seis predicciones para la ventana siguiente. FastAPI calcula los dos caminos; React los presenta sobre el mismo mapa existente. El tráfico no pasa por FastAPI.

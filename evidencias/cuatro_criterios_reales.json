@@ -1,0 +1,1443 @@
+[
+  {
+    "topologia": "nsfnet",
+    "session_id": "vivo_nsfnet_20261109T215744Z_c6b9d843",
+    "topology_instance_id": "b4878b3101129e086d549e3c",
+    "graph_version": "54f04f25d317784fb3b5f5ac",
+    "selection_revision": 1,
+    "observed_utc": "2026-11-09T22:32:08.004947+00:00",
+    "convencional": {
+      "id": "capacity",
+      "nombre": "Inversa de capacidad nominal",
+      "unidad_optimizacion": "Σ 1/Mbps",
+      "status": "available",
+      "ruta": [
+        "s5",
+        "s6",
+        "s3",
+        "s2"
+      ],
+      "edge_ids": [
+        "s5-s6",
+        "s3-s6",
+        "s2-s3"
+      ],
+      "predicciones_enlaces": [
+        {
+          "link_id": "s5-s6",
+          "origen": "s5",
+          "destino": "s6",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.10873824161728216,
+          "delay_ms": 5.608815679837175,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07185956524913248,
+          "componentes": {
+            "delay": 0.10086198764112211,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.017800442139831125
+          }
+        },
+        {
+          "link_id": "s3-s6",
+          "origen": "s6",
+          "destino": "s3",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.16167680805670773,
+          "delay_ms": 5.856888650152147,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07385620203681685,
+          "componentes": {
+            "delay": 0.10485526121649086,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.02623909255436881
+          }
+        },
+        {
+          "link_id": "s2-s3",
+          "origen": "s3",
+          "destino": "s2",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.058726297920302234,
+          "delay_ms": 6.239942384383351,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07690464519243832,
+          "componentes": {
+            "delay": 0.1109521475277338,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.009692845497982047
+          }
+        }
+      ],
+      "ventajas": [],
+      "desventajas": [],
+      "mejores_en": [
+        "saltos",
+        "retardo_configurado_ms",
+        "costo_referencia",
+        "costo_qos",
+        "delay_previsto_ms",
+        "loss_previsto_ratio",
+        "capacidad_minima_mbps"
+      ],
+      "saltos": 3,
+      "costo_referencia": 0.5,
+      "capacidad_minima_mbps": 6.0,
+      "retardo_configurado_ms": 15.0,
+      "costo_qos": 0.22262041247838765,
+      "delay_previsto_ms": 17.705646714372673,
+      "loss_previsto_ratio": 0.0,
+      "costo_optimizacion": 0.5,
+      "coincide_con": [
+        "delay",
+        "ml"
+      ],
+      "diferencias_vs_capacidad": {
+        "saltos": 0,
+        "retardo_configurado_ms": 0.0,
+        "costo_referencia": 0.0,
+        "costo_qos": 0.0,
+        "delay_previsto_ms": 0.0,
+        "loss_previsto_ratio": 0.0,
+        "capacidad_minima_mbps": 0.0
+      }
+    },
+    "inteligente": {
+      "id": "ml",
+      "nombre": "Inteligente ML",
+      "unidad_optimizacion": "QoS normalizado",
+      "status": "available",
+      "ruta": [
+        "s5",
+        "s6",
+        "s3",
+        "s2"
+      ],
+      "edge_ids": [
+        "s5-s6",
+        "s3-s6",
+        "s2-s3"
+      ],
+      "predicciones_enlaces": [
+        {
+          "link_id": "s5-s6",
+          "origen": "s5",
+          "destino": "s6",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.10873824161728216,
+          "delay_ms": 5.608815679837175,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07185956524913248,
+          "componentes": {
+            "delay": 0.10086198764112211,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.017800442139831125
+          }
+        },
+        {
+          "link_id": "s3-s6",
+          "origen": "s6",
+          "destino": "s3",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.16167680805670773,
+          "delay_ms": 5.856888650152147,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07385620203681685,
+          "componentes": {
+            "delay": 0.10485526121649086,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.02623909255436881
+          }
+        },
+        {
+          "link_id": "s2-s3",
+          "origen": "s3",
+          "destino": "s2",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.058726297920302234,
+          "delay_ms": 6.239942384383351,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.07690464519243832,
+          "componentes": {
+            "delay": 0.1109521475277338,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.009692845497982047
+          }
+        }
+      ],
+      "ventajas": [],
+      "desventajas": [],
+      "mejores_en": [
+        "saltos",
+        "retardo_configurado_ms",
+        "costo_referencia",
+        "costo_qos",
+        "delay_previsto_ms",
+        "loss_previsto_ratio",
+        "capacidad_minima_mbps"
+      ],
+      "saltos": 3,
+      "costo_referencia": 0.5,
+      "capacidad_minima_mbps": 6.0,
+      "retardo_configurado_ms": 15.0,
+      "costo_qos": 0.22262041247838765,
+      "delay_previsto_ms": 17.705646714372673,
+      "loss_previsto_ratio": 0.0,
+      "costo_optimizacion": 0.22262041247838765,
+      "coincide_con": [
+        "delay",
+        "capacity"
+      ],
+      "diferencias_vs_capacidad": {
+        "saltos": 0,
+        "retardo_configurado_ms": 0.0,
+        "costo_referencia": 0.0,
+        "costo_qos": 0.0,
+        "delay_previsto_ms": 0.0,
+        "loss_previsto_ratio": 0.0,
+        "capacidad_minima_mbps": 0.0
+      }
+    },
+    "ml": {
+      "modelo_id": "modelo_20261107T205202Z_n4vncu_0",
+      "feature_start_epoch_s": 1794263495.564852,
+      "feature_end_epoch_s": 1794263518.17921,
+      "input_age_s": 13.100127220153809,
+      "max_age_s": 120,
+      "objetivo": "siguiente_ventana",
+      "links_predicted": 21,
+      "status": "available"
+    },
+    "alternativas": [
+      {
+        "id": "hops",
+        "nombre": "Menor número de saltos",
+        "unidad_optimizacion": "saltos",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s4",
+          "s1",
+          "s2"
+        ],
+        "edge_ids": [
+          "s4-s5",
+          "s1-s4",
+          "s1-s2"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s4-s5",
+            "origen": "s5",
+            "destino": "s4",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.006830730050835585,
+            "delay_ms": 30.22899148955136,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.24839194490864464,
+            "componentes": {
+              "delay": 0.3767838898172893,
+              "loss": 0.0,
+              "capacity": 0.4,
+              "load": 0.004533176762731099
+            }
+          },
+          {
+            "link_id": "s1-s4",
+            "origen": "s4",
+            "destino": "s1",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.006830826892176327,
+            "delay_ms": 15.743563015890988,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.15723463479676014,
+            "componentes": {
+              "delay": 0.23946926959352027,
+              "loss": 0.0,
+              "capacity": 0.25,
+              "load": 0.0022717696090792665
+            }
+          },
+          {
+            "link_id": "s1-s2",
+            "origen": "s1",
+            "destino": "s2",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.0070061083157642754,
+            "delay_ms": 30.10258208632496,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.2479001981102432,
+            "componentes": {
+              "delay": 0.3758003962204864,
+              "loss": 0.0,
+              "capacity": 0.4,
+              "load": 0.004649024497713768
+            }
+          }
+        ],
+        "ventajas": [],
+        "desventajas": [
+          "Mayor retardo configurado",
+          "Mayor costo por inversa de capacidad",
+          "Mayor costo QoS previsto",
+          "Mayor delay previsto",
+          "Menor capacidad mínima nominal"
+        ],
+        "mejores_en": [
+          "saltos",
+          "loss_previsto_ratio"
+        ],
+        "saltos": 3,
+        "costo_referencia": 1.6666666666666665,
+        "capacidad_minima_mbps": 1.5,
+        "retardo_configurado_ms": 75.0,
+        "costo_qos": 0.6535267778156479,
+        "delay_previsto_ms": 76.0751365917673,
+        "loss_previsto_ratio": 0.0,
+        "costo_optimizacion": 3.0,
+        "coincide_con": [],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": 60.0,
+          "costo_referencia": 1.1666666666666665,
+          "costo_qos": 0.4309063653372603,
+          "delay_previsto_ms": 58.36948987739463,
+          "loss_previsto_ratio": 0.0,
+          "capacidad_minima_mbps": -4.5
+        }
+      },
+      {
+        "id": "delay",
+        "nombre": "Menor retardo configurado",
+        "unidad_optimizacion": "ms configurados",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s6",
+          "s3",
+          "s2"
+        ],
+        "edge_ids": [
+          "s5-s6",
+          "s3-s6",
+          "s2-s3"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s5-s6",
+            "origen": "s5",
+            "destino": "s6",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.10873824161728216,
+            "delay_ms": 5.608815679837175,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07185956524913248,
+            "componentes": {
+              "delay": 0.10086198764112211,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.017800442139831125
+            }
+          },
+          {
+            "link_id": "s3-s6",
+            "origen": "s6",
+            "destino": "s3",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.16167680805670773,
+            "delay_ms": 5.856888650152147,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07385620203681685,
+            "componentes": {
+              "delay": 0.10485526121649086,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.02623909255436881
+            }
+          },
+          {
+            "link_id": "s2-s3",
+            "origen": "s3",
+            "destino": "s2",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.058726297920302234,
+            "delay_ms": 6.239942384383351,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07690464519243832,
+            "componentes": {
+              "delay": 0.1109521475277338,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.009692845497982047
+            }
+          }
+        ],
+        "ventajas": [],
+        "desventajas": [],
+        "mejores_en": [
+          "saltos",
+          "retardo_configurado_ms",
+          "costo_referencia",
+          "costo_qos",
+          "delay_previsto_ms",
+          "loss_previsto_ratio",
+          "capacidad_minima_mbps"
+        ],
+        "saltos": 3,
+        "costo_referencia": 0.5,
+        "capacidad_minima_mbps": 6.0,
+        "retardo_configurado_ms": 15.0,
+        "costo_qos": 0.22262041247838765,
+        "delay_previsto_ms": 17.705646714372673,
+        "loss_previsto_ratio": 0.0,
+        "costo_optimizacion": 15.0,
+        "coincide_con": [
+          "capacity",
+          "ml"
+        ],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": 0.0,
+          "costo_referencia": 0.0,
+          "costo_qos": 0.0,
+          "delay_previsto_ms": 0.0,
+          "loss_previsto_ratio": 0.0,
+          "capacidad_minima_mbps": 0.0
+        }
+      },
+      {
+        "id": "capacity",
+        "nombre": "Inversa de capacidad nominal",
+        "unidad_optimizacion": "Σ 1/Mbps",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s6",
+          "s3",
+          "s2"
+        ],
+        "edge_ids": [
+          "s5-s6",
+          "s3-s6",
+          "s2-s3"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s5-s6",
+            "origen": "s5",
+            "destino": "s6",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.10873824161728216,
+            "delay_ms": 5.608815679837175,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07185956524913248,
+            "componentes": {
+              "delay": 0.10086198764112211,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.017800442139831125
+            }
+          },
+          {
+            "link_id": "s3-s6",
+            "origen": "s6",
+            "destino": "s3",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.16167680805670773,
+            "delay_ms": 5.856888650152147,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07385620203681685,
+            "componentes": {
+              "delay": 0.10485526121649086,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.02623909255436881
+            }
+          },
+          {
+            "link_id": "s2-s3",
+            "origen": "s3",
+            "destino": "s2",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.058726297920302234,
+            "delay_ms": 6.239942384383351,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07690464519243832,
+            "componentes": {
+              "delay": 0.1109521475277338,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.009692845497982047
+            }
+          }
+        ],
+        "ventajas": [],
+        "desventajas": [],
+        "mejores_en": [
+          "saltos",
+          "retardo_configurado_ms",
+          "costo_referencia",
+          "costo_qos",
+          "delay_previsto_ms",
+          "loss_previsto_ratio",
+          "capacidad_minima_mbps"
+        ],
+        "saltos": 3,
+        "costo_referencia": 0.5,
+        "capacidad_minima_mbps": 6.0,
+        "retardo_configurado_ms": 15.0,
+        "costo_qos": 0.22262041247838765,
+        "delay_previsto_ms": 17.705646714372673,
+        "loss_previsto_ratio": 0.0,
+        "costo_optimizacion": 0.5,
+        "coincide_con": [
+          "delay",
+          "ml"
+        ],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": 0.0,
+          "costo_referencia": 0.0,
+          "costo_qos": 0.0,
+          "delay_previsto_ms": 0.0,
+          "loss_previsto_ratio": 0.0,
+          "capacidad_minima_mbps": 0.0
+        }
+      },
+      {
+        "id": "ml",
+        "nombre": "Inteligente ML",
+        "unidad_optimizacion": "QoS normalizado",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s6",
+          "s3",
+          "s2"
+        ],
+        "edge_ids": [
+          "s5-s6",
+          "s3-s6",
+          "s2-s3"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s5-s6",
+            "origen": "s5",
+            "destino": "s6",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.10873824161728216,
+            "delay_ms": 5.608815679837175,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07185956524913248,
+            "componentes": {
+              "delay": 0.10086198764112211,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.017800442139831125
+            }
+          },
+          {
+            "link_id": "s3-s6",
+            "origen": "s6",
+            "destino": "s3",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.16167680805670773,
+            "delay_ms": 5.856888650152147,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07385620203681685,
+            "componentes": {
+              "delay": 0.10485526121649086,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.02623909255436881
+            }
+          },
+          {
+            "link_id": "s2-s3",
+            "origen": "s3",
+            "destino": "s2",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.058726297920302234,
+            "delay_ms": 6.239942384383351,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.07690464519243832,
+            "componentes": {
+              "delay": 0.1109521475277338,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.009692845497982047
+            }
+          }
+        ],
+        "ventajas": [],
+        "desventajas": [],
+        "mejores_en": [
+          "saltos",
+          "retardo_configurado_ms",
+          "costo_referencia",
+          "costo_qos",
+          "delay_previsto_ms",
+          "loss_previsto_ratio",
+          "capacidad_minima_mbps"
+        ],
+        "saltos": 3,
+        "costo_referencia": 0.5,
+        "capacidad_minima_mbps": 6.0,
+        "retardo_configurado_ms": 15.0,
+        "costo_qos": 0.22262041247838765,
+        "delay_previsto_ms": 17.705646714372673,
+        "loss_previsto_ratio": 0.0,
+        "costo_optimizacion": 0.22262041247838765,
+        "coincide_con": [
+          "delay",
+          "capacity"
+        ],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": 0.0,
+          "costo_referencia": 0.0,
+          "costo_qos": 0.0,
+          "delay_previsto_ms": 0.0,
+          "loss_previsto_ratio": 0.0,
+          "capacidad_minima_mbps": 0.0
+        }
+      }
+    ],
+    "mejores_por_metrica": [
+      {
+        "metrica": "saltos",
+        "nombre": "saltos",
+        "mejor_valor": 3,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "hops",
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "retardo_configurado_ms",
+        "nombre": "retardo configurado",
+        "mejor_valor": 15.0,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "costo_referencia",
+        "nombre": "costo por inversa de capacidad",
+        "mejor_valor": 0.5,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "costo_qos",
+        "nombre": "costo QoS previsto",
+        "mejor_valor": 0.22262041247838765,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "delay_previsto_ms",
+        "nombre": "delay previsto",
+        "mejor_valor": 17.705646714372673,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "loss_previsto_ratio",
+        "nombre": "loss previsto",
+        "mejor_valor": 0.0,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "hops",
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "capacidad_minima_mbps",
+        "nombre": "capacidad mínima nominal",
+        "mejor_valor": 6.0,
+        "mayor_es_mejor": true,
+        "criterios": [
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      }
+    ],
+    "pesos": {
+      "delay": 0.5,
+      "loss": 0.35,
+      "capacity": 0.15,
+      "load": 0.0
+    },
+    "escalas": {
+      "delay_ms": 50.0,
+      "loss_ratio": 0.01,
+      "capacity_mbps": 1.0
+    },
+    "criterio": "QoS normalizado direccional",
+    "rules_installed": false,
+    "formula": "w_delay*d/(d+D) + w_loss*l/(l+L) + w_capacity*C/(C+c) + w_load*t/(t+c)",
+    "advertencias": [
+      "Delay: suma de predicciones por enlace, no medicion extremo a extremo.",
+      "Loss: 1-producto(1-loss); aproximacion de perdidas sucesivas. Incluye rechazos locales de sondas.",
+      "Throughput RX por enlace no se suma ni demuestra capacidad disponible."
+    ],
+    "rutas_iguales": true,
+    "todas_coinciden": false,
+    "recomendacion": "Menor costo QoS previsto: Menor retardo configurado, Inversa de capacidad nominal, Inteligente ML. Hay empate bajo esta fórmula. Revisa los otros indicadores: no implica ventaja en todas las métricas ni una mejora medida.",
+    "comparison_id": "3570772325734829470259bf"
+  },
+  {
+    "topologia": "geant2",
+    "session_id": "vivo_geant2_20261109T215703Z_29c35a3b",
+    "topology_instance_id": "50abf3e336f0305a5645d9a2",
+    "graph_version": "e435844841c6924d2c6b56c4",
+    "selection_revision": 2,
+    "observed_utc": "2026-11-09T22:32:15.025844+00:00",
+    "convencional": {
+      "id": "capacity",
+      "nombre": "Inversa de capacidad nominal",
+      "unidad_optimizacion": "Σ 1/Mbps",
+      "status": "available",
+      "ruta": [
+        "s5",
+        "s3",
+        "s1",
+        "s2"
+      ],
+      "edge_ids": [
+        "s3-s5",
+        "s1-s3",
+        "s1-s2"
+      ],
+      "predicciones_enlaces": [
+        {
+          "link_id": "s3-s5",
+          "origen": "s5",
+          "destino": "s3",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.07045133203807988,
+          "delay_ms": 15.081215843133277,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.1533645827967003,
+          "componentes": {
+            "delay": 0.2317291655934006,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.022944943403911976
+          }
+        },
+        {
+          "link_id": "s1-s3",
+          "origen": "s3",
+          "destino": "s1",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.006822568154695954,
+          "delay_ms": 30.098729936245114,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.20931375987164857,
+          "componentes": {
+            "delay": 0.3757703768861543,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.0011358031766854496
+          }
+        },
+        {
+          "link_id": "s1-s2",
+          "origen": "s1",
+          "destino": "s2",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.04043329650097898,
+          "delay_ms": 27.989695889693188,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.20087340430291142,
+          "componentes": {
+            "delay": 0.35888966574868,
+            "loss": 0.0,
+            "capacity": 0.14285714285714285,
+            "load": 0.006693774190735728
+          }
+        }
+      ],
+      "ventajas": [],
+      "desventajas": [],
+      "mejores_en": [
+        "saltos",
+        "costo_referencia",
+        "loss_previsto_ratio",
+        "capacidad_minima_mbps"
+      ],
+      "saltos": 3,
+      "costo_referencia": 0.6666666666666666,
+      "capacidad_minima_mbps": 3.0,
+      "retardo_configurado_ms": 75.0,
+      "costo_qos": 0.5635517469712603,
+      "delay_previsto_ms": 73.16964166907158,
+      "loss_previsto_ratio": 0.0,
+      "costo_optimizacion": 0.6666666666666666,
+      "coincide_con": [
+        "hops"
+      ],
+      "diferencias_vs_capacidad": {
+        "saltos": 0,
+        "retardo_configurado_ms": 0.0,
+        "costo_referencia": 0.0,
+        "costo_qos": 0.0,
+        "delay_previsto_ms": 0.0,
+        "loss_previsto_ratio": 0.0,
+        "capacidad_minima_mbps": 0.0
+      }
+    },
+    "inteligente": {
+      "id": "ml",
+      "nombre": "Inteligente ML",
+      "unidad_optimizacion": "QoS normalizado",
+      "status": "available",
+      "ruta": [
+        "s5",
+        "s3",
+        "s4",
+        "s2"
+      ],
+      "edge_ids": [
+        "s3-s5",
+        "s3-s4",
+        "s2-s4"
+      ],
+      "predicciones_enlaces": [
+        {
+          "link_id": "s3-s5",
+          "origen": "s5",
+          "destino": "s3",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.07045133203807988,
+          "delay_ms": 15.081215843133277,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.1533645827967003,
+          "componentes": {
+            "delay": 0.2317291655934006,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.022944943403911976
+          }
+        },
+        {
+          "link_id": "s3-s4",
+          "origen": "s3",
+          "destino": "s4",
+          "direccion": "u_to_v",
+          "throughput_rx_mbps": 0.10217009763387114,
+          "delay_ms": 6.335864302146476,
+          "loss_ratio": 0.0005921492187512718,
+          "costo_qos": 0.1357995441514117,
+          "componentes": {
+            "delay": 0.11246591102544015,
+            "loss": 0.05590453896769039,
+            "capacity": 0.4,
+            "load": 0.06376981931241804
+          }
+        },
+        {
+          "link_id": "s2-s4",
+          "origen": "s4",
+          "destino": "s2",
+          "direccion": "v_to_u",
+          "throughput_rx_mbps": 0.0727626049006629,
+          "delay_ms": 6.078741240075455,
+          "loss_ratio": 0.0,
+          "costo_qos": 0.09169826752219801,
+          "componentes": {
+            "delay": 0.108396535044396,
+            "loss": 0.0,
+            "capacity": 0.25,
+            "load": 0.023679865403404696
+          }
+        }
+      ],
+      "ventajas": [
+        "Menor retardo configurado",
+        "Menor costo QoS previsto",
+        "Menor delay previsto"
+      ],
+      "desventajas": [
+        "Mayor costo por inversa de capacidad",
+        "Mayor loss previsto",
+        "Menor capacidad mínima nominal"
+      ],
+      "mejores_en": [
+        "saltos",
+        "retardo_configurado_ms",
+        "costo_qos",
+        "delay_previsto_ms"
+      ],
+      "saltos": 3,
+      "costo_referencia": 1.3333333333333333,
+      "capacidad_minima_mbps": 1.5,
+      "retardo_configurado_ms": 25.0,
+      "costo_qos": 0.38086239447031,
+      "delay_previsto_ms": 27.495821385355207,
+      "loss_previsto_ratio": 0.0005921492187512811,
+      "costo_optimizacion": 0.38086239447031,
+      "coincide_con": [
+        "delay"
+      ],
+      "diferencias_vs_capacidad": {
+        "saltos": 0,
+        "retardo_configurado_ms": -50.0,
+        "costo_referencia": 0.6666666666666666,
+        "costo_qos": -0.1826893525009503,
+        "delay_previsto_ms": -45.673820283716374,
+        "loss_previsto_ratio": 0.0005921492187512811,
+        "capacidad_minima_mbps": -1.5
+      }
+    },
+    "ml": {
+      "modelo_id": "modelo_20261107T205202Z_n4vncu_0",
+      "feature_start_epoch_s": 1794263504.517168,
+      "feature_end_epoch_s": 1794263527.633908,
+      "input_age_s": 13.443164348602295,
+      "max_age_s": 120,
+      "objetivo": "siguiente_ventana",
+      "links_predicted": 37,
+      "status": "available"
+    },
+    "alternativas": [
+      {
+        "id": "hops",
+        "nombre": "Menor número de saltos",
+        "unidad_optimizacion": "saltos",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s3",
+          "s1",
+          "s2"
+        ],
+        "edge_ids": [
+          "s3-s5",
+          "s1-s3",
+          "s1-s2"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s3-s5",
+            "origen": "s5",
+            "destino": "s3",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.07045133203807988,
+            "delay_ms": 15.081215843133277,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.1533645827967003,
+            "componentes": {
+              "delay": 0.2317291655934006,
+              "loss": 0.0,
+              "capacity": 0.25,
+              "load": 0.022944943403911976
+            }
+          },
+          {
+            "link_id": "s1-s3",
+            "origen": "s3",
+            "destino": "s1",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.006822568154695954,
+            "delay_ms": 30.098729936245114,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.20931375987164857,
+            "componentes": {
+              "delay": 0.3757703768861543,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.0011358031766854496
+            }
+          },
+          {
+            "link_id": "s1-s2",
+            "origen": "s1",
+            "destino": "s2",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.04043329650097898,
+            "delay_ms": 27.989695889693188,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.20087340430291142,
+            "componentes": {
+              "delay": 0.35888966574868,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.006693774190735728
+            }
+          }
+        ],
+        "ventajas": [],
+        "desventajas": [],
+        "mejores_en": [
+          "saltos",
+          "costo_referencia",
+          "loss_previsto_ratio",
+          "capacidad_minima_mbps"
+        ],
+        "saltos": 3,
+        "costo_referencia": 0.6666666666666666,
+        "capacidad_minima_mbps": 3.0,
+        "retardo_configurado_ms": 75.0,
+        "costo_qos": 0.5635517469712603,
+        "delay_previsto_ms": 73.16964166907158,
+        "loss_previsto_ratio": 0.0,
+        "costo_optimizacion": 3.0,
+        "coincide_con": [
+          "capacity"
+        ],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": 0.0,
+          "costo_referencia": 0.0,
+          "costo_qos": 0.0,
+          "delay_previsto_ms": 0.0,
+          "loss_previsto_ratio": 0.0,
+          "capacidad_minima_mbps": 0.0
+        }
+      },
+      {
+        "id": "delay",
+        "nombre": "Menor retardo configurado",
+        "unidad_optimizacion": "ms configurados",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s3",
+          "s4",
+          "s2"
+        ],
+        "edge_ids": [
+          "s3-s5",
+          "s3-s4",
+          "s2-s4"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s3-s5",
+            "origen": "s5",
+            "destino": "s3",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.07045133203807988,
+            "delay_ms": 15.081215843133277,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.1533645827967003,
+            "componentes": {
+              "delay": 0.2317291655934006,
+              "loss": 0.0,
+              "capacity": 0.25,
+              "load": 0.022944943403911976
+            }
+          },
+          {
+            "link_id": "s3-s4",
+            "origen": "s3",
+            "destino": "s4",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.10217009763387114,
+            "delay_ms": 6.335864302146476,
+            "loss_ratio": 0.0005921492187512718,
+            "costo_qos": 0.1357995441514117,
+            "componentes": {
+              "delay": 0.11246591102544015,
+              "loss": 0.05590453896769039,
+              "capacity": 0.4,
+              "load": 0.06376981931241804
+            }
+          },
+          {
+            "link_id": "s2-s4",
+            "origen": "s4",
+            "destino": "s2",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.0727626049006629,
+            "delay_ms": 6.078741240075455,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.09169826752219801,
+            "componentes": {
+              "delay": 0.108396535044396,
+              "loss": 0.0,
+              "capacity": 0.25,
+              "load": 0.023679865403404696
+            }
+          }
+        ],
+        "ventajas": [
+          "Menor retardo configurado",
+          "Menor costo QoS previsto",
+          "Menor delay previsto"
+        ],
+        "desventajas": [
+          "Mayor costo por inversa de capacidad",
+          "Mayor loss previsto",
+          "Menor capacidad mínima nominal"
+        ],
+        "mejores_en": [
+          "saltos",
+          "retardo_configurado_ms",
+          "costo_qos",
+          "delay_previsto_ms"
+        ],
+        "saltos": 3,
+        "costo_referencia": 1.3333333333333333,
+        "capacidad_minima_mbps": 1.5,
+        "retardo_configurado_ms": 25.0,
+        "costo_qos": 0.38086239447031,
+        "delay_previsto_ms": 27.495821385355207,
+        "loss_previsto_ratio": 0.0005921492187512811,
+        "costo_optimizacion": 25.0,
+        "coincide_con": [
+          "ml"
+        ],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": -50.0,
+          "costo_referencia": 0.6666666666666666,
+          "costo_qos": -0.1826893525009503,
+          "delay_previsto_ms": -45.673820283716374,
+          "loss_previsto_ratio": 0.0005921492187512811,
+          "capacidad_minima_mbps": -1.5
+        }
+      },
+      {
+        "id": "capacity",
+        "nombre": "Inversa de capacidad nominal",
+        "unidad_optimizacion": "Σ 1/Mbps",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s3",
+          "s1",
+          "s2"
+        ],
+        "edge_ids": [
+          "s3-s5",
+          "s1-s3",
+          "s1-s2"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s3-s5",
+            "origen": "s5",
+            "destino": "s3",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.07045133203807988,
+            "delay_ms": 15.081215843133277,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.1533645827967003,
+            "componentes": {
+              "delay": 0.2317291655934006,
+              "loss": 0.0,
+              "capacity": 0.25,
+              "load": 0.022944943403911976
+            }
+          },
+          {
+            "link_id": "s1-s3",
+            "origen": "s3",
+            "destino": "s1",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.006822568154695954,
+            "delay_ms": 30.098729936245114,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.20931375987164857,
+            "componentes": {
+              "delay": 0.3757703768861543,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.0011358031766854496
+            }
+          },
+          {
+            "link_id": "s1-s2",
+            "origen": "s1",
+            "destino": "s2",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.04043329650097898,
+            "delay_ms": 27.989695889693188,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.20087340430291142,
+            "componentes": {
+              "delay": 0.35888966574868,
+              "loss": 0.0,
+              "capacity": 0.14285714285714285,
+              "load": 0.006693774190735728
+            }
+          }
+        ],
+        "ventajas": [],
+        "desventajas": [],
+        "mejores_en": [
+          "saltos",
+          "costo_referencia",
+          "loss_previsto_ratio",
+          "capacidad_minima_mbps"
+        ],
+        "saltos": 3,
+        "costo_referencia": 0.6666666666666666,
+        "capacidad_minima_mbps": 3.0,
+        "retardo_configurado_ms": 75.0,
+        "costo_qos": 0.5635517469712603,
+        "delay_previsto_ms": 73.16964166907158,
+        "loss_previsto_ratio": 0.0,
+        "costo_optimizacion": 0.6666666666666666,
+        "coincide_con": [
+          "hops"
+        ],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": 0.0,
+          "costo_referencia": 0.0,
+          "costo_qos": 0.0,
+          "delay_previsto_ms": 0.0,
+          "loss_previsto_ratio": 0.0,
+          "capacidad_minima_mbps": 0.0
+        }
+      },
+      {
+        "id": "ml",
+        "nombre": "Inteligente ML",
+        "unidad_optimizacion": "QoS normalizado",
+        "status": "available",
+        "ruta": [
+          "s5",
+          "s3",
+          "s4",
+          "s2"
+        ],
+        "edge_ids": [
+          "s3-s5",
+          "s3-s4",
+          "s2-s4"
+        ],
+        "predicciones_enlaces": [
+          {
+            "link_id": "s3-s5",
+            "origen": "s5",
+            "destino": "s3",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.07045133203807988,
+            "delay_ms": 15.081215843133277,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.1533645827967003,
+            "componentes": {
+              "delay": 0.2317291655934006,
+              "loss": 0.0,
+              "capacity": 0.25,
+              "load": 0.022944943403911976
+            }
+          },
+          {
+            "link_id": "s3-s4",
+            "origen": "s3",
+            "destino": "s4",
+            "direccion": "u_to_v",
+            "throughput_rx_mbps": 0.10217009763387114,
+            "delay_ms": 6.335864302146476,
+            "loss_ratio": 0.0005921492187512718,
+            "costo_qos": 0.1357995441514117,
+            "componentes": {
+              "delay": 0.11246591102544015,
+              "loss": 0.05590453896769039,
+              "capacity": 0.4,
+              "load": 0.06376981931241804
+            }
+          },
+          {
+            "link_id": "s2-s4",
+            "origen": "s4",
+            "destino": "s2",
+            "direccion": "v_to_u",
+            "throughput_rx_mbps": 0.0727626049006629,
+            "delay_ms": 6.078741240075455,
+            "loss_ratio": 0.0,
+            "costo_qos": 0.09169826752219801,
+            "componentes": {
+              "delay": 0.108396535044396,
+              "loss": 0.0,
+              "capacity": 0.25,
+              "load": 0.023679865403404696
+            }
+          }
+        ],
+        "ventajas": [
+          "Menor retardo configurado",
+          "Menor costo QoS previsto",
+          "Menor delay previsto"
+        ],
+        "desventajas": [
+          "Mayor costo por inversa de capacidad",
+          "Mayor loss previsto",
+          "Menor capacidad mínima nominal"
+        ],
+        "mejores_en": [
+          "saltos",
+          "retardo_configurado_ms",
+          "costo_qos",
+          "delay_previsto_ms"
+        ],
+        "saltos": 3,
+        "costo_referencia": 1.3333333333333333,
+        "capacidad_minima_mbps": 1.5,
+        "retardo_configurado_ms": 25.0,
+        "costo_qos": 0.38086239447031,
+        "delay_previsto_ms": 27.495821385355207,
+        "loss_previsto_ratio": 0.0005921492187512811,
+        "costo_optimizacion": 0.38086239447031,
+        "coincide_con": [
+          "delay"
+        ],
+        "diferencias_vs_capacidad": {
+          "saltos": 0,
+          "retardo_configurado_ms": -50.0,
+          "costo_referencia": 0.6666666666666666,
+          "costo_qos": -0.1826893525009503,
+          "delay_previsto_ms": -45.673820283716374,
+          "loss_previsto_ratio": 0.0005921492187512811,
+          "capacidad_minima_mbps": -1.5
+        }
+      }
+    ],
+    "mejores_por_metrica": [
+      {
+        "metrica": "saltos",
+        "nombre": "saltos",
+        "mejor_valor": 3,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "hops",
+          "delay",
+          "capacity",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "retardo_configurado_ms",
+        "nombre": "retardo configurado",
+        "mejor_valor": 25.0,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "delay",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "costo_referencia",
+        "nombre": "costo por inversa de capacidad",
+        "mejor_valor": 0.6666666666666666,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "hops",
+          "capacity"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "costo_qos",
+        "nombre": "costo QoS previsto",
+        "mejor_valor": 0.38086239447031,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "delay",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "delay_previsto_ms",
+        "nombre": "delay previsto",
+        "mejor_valor": 27.495821385355207,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "delay",
+          "ml"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "loss_previsto_ratio",
+        "nombre": "loss previsto",
+        "mejor_valor": 0.0,
+        "mayor_es_mejor": false,
+        "criterios": [
+          "hops",
+          "capacity"
+        ],
+        "empate": true
+      },
+      {
+        "metrica": "capacidad_minima_mbps",
+        "nombre": "capacidad mínima nominal",
+        "mejor_valor": 3.0,
+        "mayor_es_mejor": true,
+        "criterios": [
+          "hops",
+          "capacity"
+        ],
+        "empate": true
+      }
+    ],
+    "pesos": {
+      "delay": 0.5,
+      "loss": 0.35,
+      "capacity": 0.15,
+      "load": 0.0
+    },
+    "escalas": {
+      "delay_ms": 50.0,
+      "loss_ratio": 0.01,
+      "capacity_mbps": 1.0
+    },
+    "criterio": "QoS normalizado direccional",
+    "rules_installed": false,
+    "formula": "w_delay*d/(d+D) + w_loss*l/(l+L) + w_capacity*C/(C+c) + w_load*t/(t+c)",
+    "advertencias": [
+      "Delay: suma de predicciones por enlace, no medicion extremo a extremo.",
+      "Loss: 1-producto(1-loss); aproximacion de perdidas sucesivas. Incluye rechazos locales de sondas.",
+      "Throughput RX por enlace no se suma ni demuestra capacidad disponible."
+    ],
+    "rutas_iguales": false,
+    "todas_coinciden": false,
+    "recomendacion": "Menor costo QoS previsto: Menor retardo configurado, Inteligente ML. Hay empate bajo esta fórmula. Revisa los otros indicadores: no implica ventaja en todas las métricas ni una mejora medida.",
+    "comparison_id": "8e17adad2fa35a101c7841aa"
+  }
+]

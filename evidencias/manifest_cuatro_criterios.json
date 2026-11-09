@@ -1,0 +1,26 @@
+{
+  "backup": "/home/vboxuser/proyecto_nsfnet/backups/comparacion_cuatro_criterios_20261109_222341",
+  "before_sha256": {
+    "backend/servicios/comparacion_rutas.py": "a7431ecfec578b9793595ce2606313b1942d56cbd650ef83eb14cbcf7b97a904",
+    "backend/api/sdn_comparacion.py": "c9af1abc804804ee9a6b4455dcbe7b5823863c577e66443f534af49c863c9ae2",
+    "frontend/app/src/sdn-selector-v2/ComparacionRutas.jsx": "b57865db4054fd0df437208c30fdc3db264ff3c516b5ccb3fc54b00b7eb58ab1",
+    "frontend/app/src/sdn-selector-v2/PanelSdn.jsx": "0fcd56cced7af8bebcdd53e4dcffe6dc55c1bcc91e794ebfed03de1018383d3a"
+  },
+  "after_sha256": {
+    "backend/servicios/comparacion_rutas.py": "8b410429874ab2da28bb7e03455958398dbcba7fe782a9f9545f3da6d46aabb5",
+    "backend/api/sdn_comparacion.py": "110556d5e813fd67a1baf841f2c402106b2faa571ab7730f24d0efebc2931a90",
+    "frontend/app/src/sdn-selector-v2/ComparacionRutas.jsx": "c8377ef5b25637bfc3dd9e24af24ab9ee88a2513e62f6975a04c57b2953d25f7",
+    "frontend/app/src/sdn-selector-v2/PanelSdn.jsx": "928d0316bb6e3081abb332a8bbc2137a7a0399c49f8f818ecf1bd2f2f6b5335d",
+    "frontend/app/src/sdn-selector-v2/comparisonGraph.js": "db28f3486550bcd142c9938a36ab880b1e4290779af2113a812fbbde28a39d37",
+    "frontend/app/tests/comparisonGraph.test.mjs": "08c5a38bc8122b082626214b8292992f4756cfbbadd5b7e519696fad08ab05a3",
+    "tests/test_cuatro_criterios.py": "38d63785004892eb70cb71d55c09e729b2ced0350a59d5b6e793db16cebe5d69",
+    "tests/validar_cuatro_en_vivo.py": "24423d4e260b7f8d1df4ffbe33f3377db17153a58f4da8c6863fd0596fedd16a",
+    ".github/workflows/validacion.yml": "f4fcd74d09eb479fb4a3d9e4a4682f9e849afc9cb3dec4686d52c1cf7b252672",
+    "README.md": "77708a20140e379d73a87eb438c409bcf74f9fd3ecb776c35a2f0bb49852525c",
+    "CHANGELOG.md": "b834791c01bbae4c2c63490df7b1aa4b71c8c6c1cc3b9fcd689dcceb09303f02",
+    "CONTRIBUTING.md": "4f04a0c83ed3de2b083acddb757f738e232e0295b0e7b9b7f4500583db3a8097",
+    "documentacion/ARQUITECTURA_Y_COSTO.md": "4785360a7eb0d6bd73e7c03a6561543706636a1b67fad1fc2c430172a09fd311"
+  },
+  "python_tests": 39,
+  "map_tests": 3
+}

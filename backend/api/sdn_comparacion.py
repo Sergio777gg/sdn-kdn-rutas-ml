@@ -12,7 +12,7 @@ from backend.api.sdn_predicciones_enlace_v1 import (
     SolicitudPrediccionEnlaceV1, _entrada, _validar_salida, _predecir,
 )
 from backend.servicios.comparacion_rutas import (
-    DEFAULT_WEIGHTS, DEFAULT_SCALES, TARGETS, parameters, conventional, compare,
+    DEFAULT_WEIGHTS, DEFAULT_SCALES, TARGETS, parameters, conventional, all_criteria,
 )
 
 router = APIRouter(prefix='/api/sdn', tags=['Comparacion de rutas'])
@@ -109,12 +109,14 @@ def comparison(request: ComparisonRequest):
     try:
         weights, scales = parameters(request.pesos.model_dump(),request.escalas.model_dump())
         _, reference = conventional(snapshot,request)
+        nominal_routes,nominal_rankings = all_criteria(snapshot,request)
     except ValueError as error:
         code = 409 if (snapshot.get('topology_instance_id') != request.topology_instance_id or
                        snapshot.get('graph_version') != request.graph_version) else 422
         raise HTTPException(code,str(error))
     result = {k:snapshot[k] for k in ('topologia','session_id','topology_instance_id','graph_version','selection_revision','observed_utc')}
     result.update(convencional=reference,inteligente=None,ml={'status':'unavailable'},
+        alternativas=nominal_routes,mejores_por_metrica=nominal_rankings,
         pesos=weights,escalas=scales,criterio='QoS normalizado direccional',rules_installed=False,
         formula='w_delay*d/(d+D) + w_loss*l/(l+L) + w_capacity*C/(C+c) + w_load*t/(t+c)',
         advertencias=['Delay: suma de predicciones por enlace, no medicion extremo a extremo.',
@@ -122,11 +124,18 @@ def comparison(request: ComparisonRequest):
             'Throughput RX por enlace no se suma ni demuestra capacidad disponible.'])
     try:
         predictions, metadata = predict_snapshot(snapshot)
-        ref, intelligent = compare(snapshot,request,predictions,weights,scales)
+        routes,rankings = all_criteria(snapshot,request,predictions,weights,scales)
+        ref=next(r for r in routes if r['id']=='capacity')
+        intelligent=next(r for r in routes if r['id']=='ml')
+        qos_ranking=next(r for r in rankings if r['metrica']=='costo_qos')
+        labels={r['id']:r['nombre'] for r in routes}
         result.update(convencional=ref,inteligente=intelligent,ml=dict(metadata,status='available'),
+            alternativas=routes,mejores_por_metrica=rankings,
             rutas_iguales=ref['ruta']==intelligent['ruta'],
-            recomendacion=('Ambas rutas coinciden bajo este criterio.' if ref['ruta']==intelligent['ruta'] else
-                'La ruta inteligente minimiza el costo QoS previsto de esta ventana; no garantiza mejoras medidas.'))
+            todas_coinciden=all(r['status']=='available' for r in routes) and len({tuple(r['ruta']) for r in routes})==1,
+            recomendacion=('Menor costo QoS previsto: '+', '.join(labels[k] for k in qos_ranking['criterios'])+
+                ('. Hay empate bajo esta fórmula.' if qos_ranking['empate'] else '.')+
+                ' Revisa los otros indicadores: no implica ventaja en todas las métricas ni una mejora medida.'))
         if weights['load']:
             result['advertencias'].append('Carga RX habilitada como proxy de trafico cursado; puede subestimar congestion con perdidas. No estima ancho de banda libre.')
     except HTTPException as error:
@@ -144,9 +153,11 @@ def comparison(request: ComparisonRequest):
         age = time.time()-result['ml']['feature_end_epoch_s']
         if not -5 <= age <= 120:
             result.update(convencional=reference,inteligente=None,
+                alternativas=nominal_routes,mejores_por_metrica=nominal_rankings,
                 ml={'status':'unavailable','motivo':'Las entradas expiraron durante la validacion final.'},
                 recomendacion='Ruta inteligente no disponible: faltan predicciones validas y recientes.')
             result.pop('rutas_iguales',None)
+            result.pop('todas_coinciden',None)
         else:
             result['ml']['input_age_s'] = age
     result['comparison_id'] = hashlib.sha256(json.dumps(result,sort_keys=True,allow_nan=False).encode()).hexdigest()[:24]
