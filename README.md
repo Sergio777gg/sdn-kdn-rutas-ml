@@ -4,6 +4,10 @@
 
 Ampliación del proyecto existente FastAPI/React/RYU/Mininet. Compara las cuatro opciones del selector: menos saltos, menor retardo configurado, inversa de capacidad y ruta inteligente con QoS direccional previsto por el modelo existente. No reentrena el modelo ni instala forwarding al comparar.
 
+## Guía completa en Word
+
+[Descargar la guía completa editable](documentacion/GUIA_COMPLETA_SDN_KDN.docx). Incluye 20 páginas y 11 diagramas sobre entrenamiento e inferencia del modelo, Dijkstra y los cuatro criterios, telemetría, planos y protocolos, arquitectura, API, sesiones y arranque consolidado. Añade los resultados de evaluación, las 60 características y los seis objetivos del modelo.
+
 ## Guía sencilla con diagramas
 
 [Leer la guía en GitHub](documentacion/GUIA_SENCILLA_SDN_KDN.md) o [descargar el PDF](documentacion/GUIA_SENCILLA_SDN_KDN.pdf). Explica el modelo Random Forest, las cuatro rutas, los planos de datos/control/conocimiento, los protocolos y las peticiones de la aplicación en seis páginas y cinco diagramas.
